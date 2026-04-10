@@ -139,7 +139,7 @@ function createPDF() {
     // Top Items
     const rowPayments = [
         ["Monthly Pay", monthlyPay.toFixed(2)],
-        ["Materials", materials.toFixed(2)],
+        ["Cost of materials", materials.toFixed(2)],
         ["VAT", vat.toFixed(2)]
     ];
 
@@ -166,7 +166,7 @@ function createPDF() {
     //Deduction Details Title
     setTextStyle(doc, "title");
     doc.setFontSize(15);
-    doc.text("Deductions", margin + (boxWidth * 2) + (gap * 2), tableY - 3);
+    doc.text("CIS deductions", margin + (boxWidth * 2) + (gap * 2), tableY - 3);
 
     //table3
     doc.setFillColor(255, 255, 255);
