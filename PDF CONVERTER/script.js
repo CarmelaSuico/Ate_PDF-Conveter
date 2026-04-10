@@ -166,7 +166,7 @@ function createPDF() {
     //Deduction Details Title
     setTextStyle(doc, "title");
     doc.setFontSize(15);
-    doc.text("CIS deductions", margin + (boxWidth * 2) + (gap * 2), tableY - 3);
+    doc.text("Deductions", margin + (boxWidth * 2) + (gap * 2), tableY - 3);
 
     //table3
     doc.setFillColor(255, 255, 255);
@@ -176,7 +176,7 @@ function createPDF() {
     
     //labels
     setTextStyle(doc, "label");
-    doc.text("Deduction", t3X + padding, t3Y_Internal);
+    doc.text("CIS deduction", t3X + padding, t3Y_Internal);
 
     //values
     setTextStyle(doc, "value");
