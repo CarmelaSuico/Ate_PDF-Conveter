@@ -69,10 +69,10 @@ function createPDF() {
     // --- 1. DATA GATHERING ---
     const name = document.getElementById("name").value || "N/A";
     const date = document.getElementById("date").value;
-    const address = document.getElementById("Address").value || "N/A";
+    const address = "42 Haxton Road, Newark, NG24 4QB" || "N/A";
     const fullDate = formatDate(date, 'full');
     const numericDate = formatDate(date, 'numeric');
-    const idNumber = document.getElementById("idNumber").value || "N/A";
+    const idNumber ="475/YE90863" || "N/A";
     const utr = document.getElementById("utr").value || "N/A";
     const monthlyPay = parseFloat(document.getElementById("monthlyPay").value) || 0;
     const materials = parseFloat(document.getElementById("materials").value) || 0;
@@ -112,11 +112,11 @@ function createPDF() {
     
     doc.setFont("times", "normal");
     doc.setTextColor(100, 100, 100); // Lighter grey for date
-    doc.text(`Month Ending ${fullDate}`, margin + doc.getTextWidth(name) + 5, margin + 10);
+    doc.text(`Month Ending ${fullDate}`, margin + doc.getTextWidth(name) + 10, margin + 10);
     
     // Right-aligned Header Info
     doc.setTextColor(0, 0, 0);
-    doc.setFontSize(10);
+    doc.setFontSize(10);    
     doc.setFont("times", "bold");
     doc.text("1Ones Contraction Ltd", pageWidth - margin, margin + 5, { align: "right" });
     doc.setFont("times", "normal");
@@ -299,7 +299,7 @@ function createPDF() {
     const footerY = pageHeight - margin; // 1 inch (or 0.5 inch) up from the bottom edge
 
     doc.setFontSize(12); // Making footer text slightly smaller
-    doc.text(`Contractor's address: ${address}`, margin, footerY);
+    doc.text(address, margin, footerY);
 
     return doc;
 }
