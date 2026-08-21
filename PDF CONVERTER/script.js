@@ -319,4 +319,5 @@ function downloadPDF() {
 
     const doc = createPDF();
     doc.save("Payment and Deduction Statement - " + name + " - Month Ending " + numericDate + ".pdf");
+
 }
